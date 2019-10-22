@@ -1,5 +1,6 @@
 target/
-.idea/
 lib/
-Dyspozytornia.iml
+.idea/
+dyspozytornia.iml
+passy.txt
 out/
