@@ -19,10 +19,21 @@ public class SupplyTicket {
     private String shopMinute;
     private double distance;
     private double duration;
+<<<<<<< HEAD
+=======
+    private int path;
+>>>>>>> ol
     private Logger log = Logger.getLogger("SupplyTicket");
 
     public SupplyTicket() {
     }
+<<<<<<< HEAD
+=======
+
+    public int getPath() { return path; }
+
+    public void setPath(int path) { this.path = path; }
+>>>>>>> ol
 
     public int getTicketId() {
         return ticketId;
