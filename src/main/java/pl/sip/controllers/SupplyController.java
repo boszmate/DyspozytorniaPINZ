@@ -21,11 +21,7 @@ import javax.validation.Valid;
 import java.lang.reflect.Array;
 import java.util.*;
 import java.util.logging.Logger;
-<<<<<<< HEAD
-import java.util.stream.IntStream;
-=======
 //import java.util.stream.IntStream;
->>>>>>> ol
 
 @Controller
 public class SupplyController {
@@ -59,10 +55,7 @@ public class SupplyController {
                     "<th>Czas trwania</th>" +
                     "<th>Status</th>" +
                     "<th>Oczekiwana data dostawy</th>" +
-<<<<<<< HEAD
-=======
                     "<th>Numer trasy</th>" +
->>>>>>> ol
                     "</tr>\n");
             for (SupplyTicket ticket : supplyTickets) {
                 if (!ticket.isCompleted()) {
@@ -77,11 +70,7 @@ public class SupplyController {
                             "</td><td style='display: none'>" + storeLon + "</td><td style='display: none'>" + storeLat +
                             "</td><td>" + ticket.getStoreId() + "</td><td>"+ ticket.getDriverId() +"</td><td>"+
                             ticket.getDuration() + "</td><td>" + ticket.getTicketStatus() + "</td><td>"+
-<<<<<<< HEAD
-                            ticket.getDeliveryDate() + "</td></tr>\n";
-=======
                             ticket.getDeliveryDate() + "</td><td>" + ticket.getPath() + "</td></tr>\n";
->>>>>>> ol
                     tableFill.append(htmlTag);
                 }
             }
@@ -167,11 +156,7 @@ public class SupplyController {
 
         ArrayList<Integer> ticketIdList = sicketId_and_path.entrySet().iterator().next().getKey();
         ArrayList<Integer> pathList = sicketId_and_path.entrySet().iterator().next().getValue();
-<<<<<<< HEAD
-
-=======
         int pathId = -1;
->>>>>>> ol
         //TODO: checkAvailableDrivers based on calculated duration
         for(int n = 0; n < MAX_TICKETS_PER_DRIVER; n++){
             Integer shopId = pathList.get(n);
@@ -189,12 +174,9 @@ public class SupplyController {
             ticket.setStoreId(finalDistanceMap.entrySet().iterator().next().getKey());
             ticket.setDeliveryDate("date");
             //TODO: Można tutaj dodać jeszcze pole do tabeli z trasą - trasa znajduje się w zmiennej `pathList`
-<<<<<<< HEAD
-=======
             if(n==0)
                 pathId = ticketId;
             ticket.setPath(pathId);
->>>>>>> ol
             log.info("Updating: ");
             log.info(ticket.toString());
             ticketService.createTicketNew(ticket);
