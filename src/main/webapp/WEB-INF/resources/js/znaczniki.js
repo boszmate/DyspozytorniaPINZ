@@ -75,7 +75,6 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         origin: magazyn,
         destination: magazyn,
         waypoints: przystanki,
-        optimizeWaypoints: true,
         travelMode: 'DRIVING'
     }, function(response, status) {
         if (status === 'OK') {

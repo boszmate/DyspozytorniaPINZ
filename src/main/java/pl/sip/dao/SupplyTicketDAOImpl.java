@@ -306,7 +306,7 @@ public class SupplyTicketDAOImpl implements SupplyTicketDAO {
 
     @Override
     public void createTicketNew(SupplyTicket ticket) {
-        String sql = "update Supply set StoreId = ?, DriverId = ?, DeliveryDate = ?, DurationTime = ?, Status = ?, Path = ? where SupplyId = ?";
+        String sql = "update Supply set StoreId = ?, DriverId = ?, DeliveryDate = ?, DurationTime = ?, Status = ?, Path = ?, ShopId = ? where SupplyId = ?";
 
         int storeId = ticket.getStoreId();
         int driverId = ticket.getDriverId();
@@ -323,7 +323,8 @@ public class SupplyTicketDAOImpl implements SupplyTicketDAO {
             preparedStatement.setDouble(4, ticket.getDuration());
             preparedStatement.setString(5, ticket.getTicketStatus());
             preparedStatement.setInt(6, ticket.getPath());
-            preparedStatement.setInt(7, ticket.getTicketId());
+            preparedStatement.setInt(7, ticket.getShopId());
+            preparedStatement.setInt(8, ticket.getTicketId());
             preparedStatement.execute();
             connection.close();
         } catch (SQLException e){
