@@ -19,6 +19,8 @@ import pl.sip.utils.SortByDistance;
 
 import javax.validation.Valid;
 import java.lang.reflect.Array;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.*;
 import java.util.logging.Logger;
 //import java.util.stream.IntStream;
@@ -30,7 +32,7 @@ public class SupplyController {
     private final MapPointerService pointerService;
     private Logger log = Logger.getLogger("SupplyController");
 
-    private final int MAX_TICKETS_PER_DRIVER = 5;
+    private final int MAX_TICKETS_PER_DRIVER = 10;
 
     @Autowired
     public SupplyController(SupplyTicketService ticketService, MapPointerService pointerService) {
@@ -127,6 +129,9 @@ public class SupplyController {
 
         log.info("" + nextFewTickets.size());
 
+        //Time measuring for supply
+        long startTime = System.nanoTime();
+
         Map<Integer, Map<Double, Map<ArrayList<Integer>, ArrayList<Integer>>>> distanceMap = new HashMap<>();
         for (NewMapPointer warehouse : allWarehouses) {
             log.info(warehouse.toString());
@@ -148,6 +153,10 @@ public class SupplyController {
                 finalDistanceMap.put(warehouseId, shortestPathPerWarehouse.getValue());
             }
         }
+
+        //NumberFormat formatter = new DecimalFormat("#0.0000000000");
+        long endTime   = System.nanoTime();
+        System.out.println("Total time is " + (endTime - startTime) + " ns.");
 
         //TODO: [Hubert] ????? XDD
         Map<ArrayList<Integer>, ArrayList<Integer>> sicketId_and_path =
