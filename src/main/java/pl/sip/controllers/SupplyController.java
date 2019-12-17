@@ -56,7 +56,7 @@ public class SupplyController {
                     "<th>Driver Id</th>" +
                     "<th>Czas trwania</th>" +
                     "<th>Status</th>" +
-                    "<th>Oczekiwana data dostawy</th>" +
+                    "<th style='display: none'>Oczekiwana data dostawy</th>" +
                     "<th>Numer trasy</th>" +
                     "</tr>\n");
             for (SupplyTicket ticket : supplyTickets) {
@@ -71,7 +71,7 @@ public class SupplyController {
                             "</td><td style='display: none'>" + shopLon + "</td><td style='display: none'>" + shopLat +
                             "</td><td style='display: none'>" + storeLon + "</td><td style='display: none'>" + storeLat +
                             "</td><td>" + ticket.getStoreId() + "</td><td>"+ ticket.getDriverId() +"</td><td>"+
-                            ticket.getDuration() + "</td><td>" + ticket.getTicketStatus() + "</td><td>"+
+                            ticket.getDuration() + "</td><td>" + ticket.getTicketStatus() + "</td><td style='display: none'>"+
                             ticket.getDeliveryDate() + "</td><td>" + ticket.getPath() + "</td></tr>\n";
                     tableFill.append(htmlTag);
                 }
@@ -182,7 +182,7 @@ public class SupplyController {
             ticket.setDistance(distance);
             ticket.setDriverId(1);
             ticket.setStoreId(finalDistanceMap.entrySet().iterator().next().getKey());
-            ticket.setDeliveryDate("date");
+            ticket.setDeliveryDate(" ");
             //TODO: Można tutaj dodać jeszcze pole do tabeli z trasą - trasa znajduje się w zmiennej `pathList`
             if(n==0)
                 pathId = ticketId;
