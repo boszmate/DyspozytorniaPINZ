@@ -19,7 +19,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-centered">
-                                <form:input path="userName" cssClass="form-control" placeholder="Nazwa użytkownika"/>
+                                <form:input path="userName" cssClass="form-control" placeholder="Nazwa uzytkownika"/>
                             </div>
                         </div>
                         <div class="form-group">
@@ -39,12 +39,12 @@
                         </div>
                         <div class="form-group">
                             <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-centered">
-                                <form:password path="password" cssClass="form-control" placeholder="Hasło"/>
+                                <form:password path="password" cssClass="form-control" placeholder="Haslo"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-centered">
-                                <form:password path="confirmPassword" class="form-control" placeholder="Powtórz hasło"/>
+                                <form:password path="confirmPassword" class="form-control" placeholder="Powtorz haslo"/>
                             </div>
                         </div>
                         <div class="form-group">
